@@ -15,16 +15,17 @@ public class SSHConfig {
         return port;
     }
 
+
+    public void setPort(int port) {
+        this.port = port;
+    }
+
     public SSHConfig(int id, String ip, int port, String name, String password) {
         this.id = id;
         this.ip = ip;
         this.port = port;
         this.name = name;
         this.password = password;
-    }
-
-    public void setPort(int port) {
-        this.port = port;
     }
 
     public SSHConfig() {

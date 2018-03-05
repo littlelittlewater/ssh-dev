@@ -10,16 +10,16 @@ import java.io.IOException;
 public class SSHServer {
     //当前配置
     private SSHConfig curConfig;
-    private Session session;
+    private Session curSession;
     private LoggerCommand loggerCommand = new LoggerCommand();
 
     public void loadConfig(SSHConfig sshConfig){
         curConfig = sshConfig;
-        session = this.load();
+         load();
 
     }
 
-    private Session load() {
+    private void load() {
         JSch jsch = new JSch();
         Session session = null;
         try {
@@ -30,14 +30,36 @@ public class SSHServer {
         } catch (JSchException e) {
             e.printStackTrace();
         }
-        return session;
+        curSession =  session;
     }
 
     public  Message execute(SSHCommand sshCommand){
         Message  message = null;
-        message = sshCommand.execute(session);
+        message = sshCommand.execute(curSession);
         loggerCommand.setMessage(message);
-        loggerCommand.execute(session);
+        loggerCommand.execute(curSession);
         return message;
+
+    }
+
+    public void reload(SSHConfig sshConfig) {
+       curConfig =sshConfig;
+       load();
+    }
+
+    public SSHConfig getCurConfig() {
+        return curConfig;
+    }
+
+    public void setCurConfig(SSHConfig curConfig) {
+        this.curConfig = curConfig;
+    }
+
+    public Session getCurSession() {
+        return curSession;
+    }
+
+    public void setCurSession(Session curSession) {
+        this.curSession = curSession;
     }
 }

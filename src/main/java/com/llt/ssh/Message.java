@@ -53,8 +53,8 @@ public class Message {
     public String toFormatString() {
         String date = new SimpleDateFormat("HH:mm:ss").format(new Date());
         return  "["+date+"]  "+
-                "returnCode:" + returnCode +
                 ",command:" + command +
+                "returnCode:" + returnCode +
                 ",msg:" + msg ;
     }
 }
