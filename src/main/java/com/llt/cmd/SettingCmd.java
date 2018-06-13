@@ -1,10 +1,6 @@
 package com.llt.cmd;
 
-import com.llt.model.Context;
 import com.llt.model.SSHConfig;
-import com.llt.ssh.SSHServer;
-
-import java.util.HashMap;
 
 public class SettingCmd {
 

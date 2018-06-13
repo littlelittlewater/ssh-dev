@@ -1,14 +1,14 @@
 package com.llt.cmd;
 
-import com.llt.ssh.Message;
-import com.llt.ssh.SSHServer;
-import com.llt.ssh.SystemCommand;
+import com.llt.command.Message;
+import com.llt.model.SSHServer;
+import com.llt.command.SystemCommand;
 
 import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import static com.llt.ssh.Constant.BASHCONFIG;
+import static com.llt.command.Constant.BASHCONFIG;
 
 public class SystemCmd {
     public static void show(String s){

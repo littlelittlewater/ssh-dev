@@ -1,7 +1,7 @@
 package com.llt.model;
 
 /**
- * 连接信息
+ *
  */
 public class SSHConfig {
     private int id;
@@ -9,7 +9,18 @@ public class SSHConfig {
     private int port;
     private String name;
     private String password;
+    private String remark;
 
+
+
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 
     public int getPort() {
         return port;

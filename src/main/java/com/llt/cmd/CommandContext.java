@@ -1,13 +1,14 @@
 package com.llt.cmd;
 
-import com.jcraft.jsch.Session;
 import com.llt.model.SSHConfig;
-import com.llt.ssh.SSHServer;
+import com.llt.model.SSHServer;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
+/**
+ *   上下语境
+ */
 public class CommandContext {
 
     private static List<SSHConfig> config = new ArrayList<>();

@@ -1,18 +1,28 @@
-package com.llt.ssh;
+package com.llt.model;
 
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
-import com.llt.model.SSHConfig;
+import com.llt.command.LoggerCommand;
+import com.llt.command.Message;
+import com.llt.command.SSHCommand;
 
-import java.io.IOException;
-
+/**
+ * 连接管理
+ */
 public class SSHServer {
     //当前配置
     private SSHConfig curConfig;
     private Session curSession;
     private LoggerCommand loggerCommand = new LoggerCommand();
+    private String appUrl;
+    public String getAppUrl() {
+        return appUrl;
+    }
 
+    public void setAppUrl(String appUrl) {
+        this.appUrl = appUrl;
+    }
     public void loadConfig(SSHConfig sshConfig){
         curConfig = sshConfig;
          load();
@@ -33,7 +43,7 @@ public class SSHServer {
         curSession =  session;
     }
 
-    public  Message execute(SSHCommand sshCommand){
+    public Message execute(SSHCommand sshCommand){
         Message  message = null;
         message = sshCommand.execute(curSession);
         loggerCommand.setMessage(message);

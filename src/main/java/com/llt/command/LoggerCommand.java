@@ -1,11 +1,11 @@
-package com.llt.ssh;
+package com.llt.command;
 
 import com.jcraft.jsch.Session;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static com.llt.ssh.Constant.LOGPATH;
+import static com.llt.command.Constant.LOGPATH;
 
 /**
  * 用于记录每次的操作记录

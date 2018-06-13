@@ -1,4 +1,4 @@
-package com.llt.ssh;
+package com.llt.command;
 
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelSftp;
@@ -8,7 +8,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.Vector;
 
 public class UpFileCommand implements SSHCommand {
     private String localPath;

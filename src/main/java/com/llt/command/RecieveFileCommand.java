@@ -1,4 +1,4 @@
-package com.llt.ssh;
+package com.llt.command;
 
 import com.jcraft.jsch.Session;
 
